@@ -1,10 +1,18 @@
-  const catPrototype = {
-      sound: 'Meow!',
-      makeSound: function() {
-          console.log(this.sound)
-      }
-  }
+const cat1 = {
+    name: 'Fluffy'
+}
 
-  const cat1 = Object.create(catPrototype)
-  cat1.sound = 'Bark!'
-  cat1.makeSound()
+const cat2 = {
+    sound: "Miauuuu"
+}
+
+const cat3 = {
+    legs: 3,
+    sound: "Bark"
+}
+
+const cat4 = {
+    ...cat1,
+    ...cat2,
+    ...cat3
+}
