@@ -1,25 +1,12 @@
+  //bind, call, apply - jestesmy w stanie zmienic kontekst wywołania funkcji
+
   window.name = 'Ala'
 
-  function makeSayHello() {
-      const sayHello = () => console.log('Hello ' + this.name)
+  function SayHello(greetings = 'Hello', mark = '!') {
+      console.log(greetings + ' ' + this.name + mark)
 
-      return sayHello
   }
+  SayHello()
+  SayHello('Hi', '?')
 
-  const sayHello = makeSayHello()
-
-  const me = {
-      name: 'Mateusz',
-      makeSayHello: makeSayHello
-  }
-
-  me.sayHello = me.makeSayHello()
-
-  // sayHello()
-
-  // me.sayHello()
-
-  const sayHelloNew = sayHello
-  const meSayHelloNew = me.sayHello
-
-  sayHelloNew()
+  SayHello.call({ name: 'Mateusz' })
