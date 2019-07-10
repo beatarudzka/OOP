@@ -1,12 +1,3 @@
-window.name = 'Ala'
+const add = new Function('a' + 'b', 'return a + b')
 
-function sayHello(greetings = 'Hello', mark = '!') {
-    console.log(greetings + ' ' + this.name + mark)
-}
-
-const boundSayHello = sayHello.bind({ name: 'Mateusz' })
-
-sayHello()
-boundSayHello()
-
-boundSayHello.call({ name: 'Eugeniusz' }) // do not work
+add(1, 2)
