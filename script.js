@@ -6,6 +6,8 @@
       console.log(greetings + ' ' + this.name + mark)
 
   }
-  sayHello.apply()
-  sayHello.apply({ name: 'Beata' })
-  sayHello.apply({ name: 'Beata' }, ['Hi', '?'])
+  const name = 'Mateusz'
+  const args = ['Heloooo', '??']
+
+
+  sayHello.apply({ name }, args)
