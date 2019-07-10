@@ -1,6 +1,25 @@
-//funkcja strzałkowa zapamietuje this na miejsca deklaracji a deklaracja może być w innej funkcji
-// 
+  window.name = 'Ala'
 
-const sayHello = () => {
-    console.log('Hello' + this.name)
-}
+  function makeSayHello() {
+      const sayHello = () => console.log('Hello ' + this.name)
+
+      return sayHello
+  }
+
+  const sayHello = makeSayHello()
+
+  const me = {
+      name: 'Mateusz',
+      makeSayHello: makeSayHello
+  }
+
+  me.sayHello = me.makeSayHello()
+
+  // sayHello()
+
+  // me.sayHello()
+
+  const sayHelloNew = sayHello
+  const meSayHelloNew = me.sayHello
+
+  sayHelloNew()
