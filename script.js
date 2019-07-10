@@ -2,11 +2,10 @@
 
   window.name = 'Ala'
 
-  function SayHello(greetings = 'Hello', mark = '!') {
+  function sayHello(greetings = 'Hello', mark = '!') {
       console.log(greetings + ' ' + this.name + mark)
 
   }
-  SayHello()
-  SayHello('Hi', '?')
-
-  SayHello.call({ name: 'Mateusz' })
+  sayHello.apply()
+  sayHello.apply({ name: 'Beata' })
+  sayHello.apply({ name: 'Beata' }, ['Hi', '?'])
