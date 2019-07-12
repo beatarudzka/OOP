@@ -6,9 +6,7 @@ class Rectangle {
         this.element = null
     }
 
-    render()
-
-    {
+    render() {
         this.element = this.element || document.createElement('div')
 
         this.element.style.width = this.a + 'px'
@@ -24,21 +22,38 @@ class Rectangle {
         return this
     }
 }
+
 class Square extends Rectangle {
     constructor(a, backgroundColor) {
         super(a, a, backgroundColor)
     }
 }
 
+class Circle extends Square {
+    render() {
+        super.render()
 
-const square1 = new Square(100, 'green')
+        this.element.style.borderRadius = '50%'
 
-const rectangle1 = new Rectangle(100, 50, 'red')
+        return this
+    }
+}
 
-rectangle1
-    .render()
-    .append()
+class Game {
+    constructor() {
+        this.position = {
+            x: 0,
+            y: 0
+        }
+        this.square = (new Square(20, 'red')).render()
+    }
 
-square1
-    .render()
-    .append()
+    append(container = document.body) {
+        container.appendChild(this.square.element)
+
+        return this
+    }
+}
+
+const game1 = new Game()
+game1.append()
