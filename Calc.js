@@ -19,7 +19,7 @@ CustomInput.prototype.render = function() {
 
 function Calc() {
     this.number1 = 10
-    this.number2 = 11
+    this.number2 = 10
     this.element = null
 }
 
